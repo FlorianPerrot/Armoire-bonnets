@@ -1,0 +1,35 @@
+=user-select()
+  -moz-user-select: -moz-none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -o-user-select: none
+  user-select: none
+
+=transform($transf_arg)
+  transform: $transf_arg
+  -webkit-transform: $transf_arg
+  -moz-transform: $transf_arg
+  -o-transform: $transf_arg
+  -ms-transform: $transf_arg
+
+=transition($transi_arg)
+  transition: $transi_arg
+  -webkit-transition: $transi_arg
+  -moz-transition: $transi_arg
+  -o-transition: $transi_arg
+  -ms-transition: $transi_arg
+
+=backface-visibility($back-visi_arg)
+  backface-visibility: $back-visi_arg
+  -webkit-backface-visibility: $back-visi_arg
+  -moz-backface-visibility: $back-visi_arg
+  -o-backface-visibility: $back-visi_arg
+  -ms-backface-visibility: $back-visi_arg
+
+=smartphone-media()
+  @media only screen and (max-width: $smartphone)
+    @content
+
+=tablette-media()
+  @media only screen and (max-width: $tablette)
+    @content
