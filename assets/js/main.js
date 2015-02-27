@@ -3,7 +3,7 @@ require.config({
 	paths: {
 		jquery: '../../vendor/jquery/dist/jquery',
 		underscore: '../../vendor/underscore/underscore',
-		backbone: '../../vendor/backbone/backbone'
+		backbone: '../../vendor/backbone/backbone',
 	},
 	//Defini les deps non supporté par requireJs
 	shim: {
@@ -12,13 +12,16 @@ require.config({
 			export: 'Backbone'
 		},
 		'underscore': {
-			export: '_'	
+			export: '_'
+		},
+		'jquery': {
+			export: '$'
 		}
 	}
 });
 require(
-	['jquery'],
-	function($){
-		$('body').html('hello');
+	['app'],
+	function(App){
+		App.initialize();
 	}
 );
