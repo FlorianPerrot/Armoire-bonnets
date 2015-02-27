@@ -1,6 +1,6 @@
 define(
-    ['jquery', 'underscore', 'backbone' ],
-    function($,_,Backbone){
+    ['jquery', 'underscore', 'backbone', 'views/checkin/lists' ],
+    function($,_,Backbone, CheckinListView){
         var Router = Backbone.Router.extend({
             routes: {
                 ""                       : "accueil",
@@ -11,9 +11,16 @@ define(
 
         var initialize = function(){
             var router = new Router;
+            $.ajaxPrefilter( function( options, originalOptions, jqXHR ){
+                options.url = 'http://checkin-api.dev.cap-liberte.com/' + options.url;
+                options.crossDomain = { crossDomain: true };
+            } );
+
             router.on('route:accueil',
                 function(){
-
+                    var checkinListView = new CheckinListView();
+                    checkinListView.render();
+                    console.log('Accueil');
                 }
             );
 
