@@ -1,6 +1,6 @@
 define(
-    ['jquery' //Def libs...],
-    function(){
+    ['jquery', 'underscore', 'backbone' //Def libs...],
+    function($,_,Backbone){
         // definition de function
         var initialize = function(){
 
