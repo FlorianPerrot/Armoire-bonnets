@@ -1,0 +1,8 @@
+<h2> Checkins </h2>
+<ul>
+    <% _.each(checkins, function(checkin){ %>
+      <li>
+        item <b><%= checkin.get('id') %></b>
+      </li>
+    <% }); %>
+</ul>
