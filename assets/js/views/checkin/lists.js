@@ -1,11 +1,12 @@
 define(
-    ['jquery', 'underscore', 'backbone', 'collections/checkins'],
-    function($,_,Backbone,CheckinCollection){
+    ['jquery', 'underscore', 'backbone',
+    'collections/checkins', 'text!/assets/templates/checkin/list.html'],
+    function($,_,Backbone,CheckinCollection, CheckinlistTemplate){
         var CheckinListView = Backbone.View.extend({
 
             el: "#checkinlist",
 
-            template: '<h3>test template</h3>',
+            template: _.template(CheckinlistTemplate),
 
             render: function(){
                 console.log('CheckInListView Render');
@@ -17,7 +18,10 @@ define(
                 checkinCollection.fetch({
                     success: function( checkins ){
                         console.log( self.$el );
-                        self.$el.html( self.template );
+                        self.$el.html( self.template({
+                            checkins: checkins.models
+                          })
+                        );
                     }
                 });
             }
