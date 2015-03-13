@@ -1,9 +1,10 @@
 define(
-    ['jquery', 'underscore', 'backbone', 'views/checkin/lists' ],
-    function($,_,Backbone, CheckinListView){
+    ['jquery', 'underscore', 'backbone', 'views/checkin/lists', 'views/checkin/detailsView'],
+    function($,_,Backbone, CheckinListView, DetailsView){
         var Router = Backbone.Router.extend({
             routes: {
                 ""                       : "accueil",
+                "checkin/:idCheckin"     : "voir",
                 "checkin/ajout"          : "ajout",
                 "checkin/edit/:idCheckin": "edit"
             }
@@ -20,7 +21,13 @@ define(
                 function(){
                     var checkinListView = new CheckinListView();
                     checkinListView.render();
-                    console.log('Accueil');
+                }
+            );
+
+            router.on('route:voir',
+                function(idCheckin){
+                    var detailsView = new DetailsView({id: idCheckin});
+                    detailsView.render();
                 }
             );
 
@@ -32,7 +39,7 @@ define(
 
             router.on('route:edit',
                 function(idCheckin){
-                    console.log('edit: '+idCheckin);
+
                 }
             );
 

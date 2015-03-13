@@ -3,6 +3,9 @@ define(
   function($,_,Backbone){
     // definition de function
     var Checkin = Backbone.Model.extend({
+
+      urlRoot: '/checkin',
+
       defaults: {
         id: "",
         created_at: (new Date()).toJSON(),
@@ -12,7 +15,7 @@ define(
         deleted_at: null
       },
       initialize: function(){
-        
+
       }
     });
 

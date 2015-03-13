@@ -1,8 +1,13 @@
 <h2> Checkins </h2>
-<ul>
+<ul class="list-group">
     <% _.each(checkins, function(checkin){ %>
-      <li>
-        item <b><%= checkin.get('id') %></b>
-      </li>
+
+      <a href="#checkin/"+<%= checkin.get('id') %> class="list-group-item">
+        <%= checkin.get('id') %>
+        <span class="pull-right">
+          <i class="glyphicon glyphicon-chevron-right"></i>
+        </span>
+      </a>
+
     <% }); %>
 </ul>

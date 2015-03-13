@@ -9,7 +9,6 @@ define(
             template: _.template(CheckinlistTemplate),
 
             render: function(){
-                console.log('CheckInListView Render');
 
                 var self = this;
 
@@ -17,7 +16,6 @@ define(
 
                 checkinCollection.fetch({
                     success: function( checkins ){
-                        console.log( self.$el );
                         self.$el.html( self.template({
                             checkins: checkins.models
                           })
