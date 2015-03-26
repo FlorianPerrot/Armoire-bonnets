@@ -4,7 +4,7 @@ define(
     function($,_,Backbone,CheckinCollection, CheckinlistTemplate){
         var CheckinListView = Backbone.View.extend({
 
-            el: "#checkinlist",
+            el: "#checkin-container",
 
             template: _.template(CheckinlistTemplate),
 

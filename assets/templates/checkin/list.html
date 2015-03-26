@@ -2,7 +2,7 @@
 <ul class="list-group">
     <% _.each(checkins, function(checkin){ %>
 
-      <a href="#checkin/"+<%= checkin.get('id') %> class="list-group-item">
+      <a href="#checkin/<%= checkin.get('id') %>" class="list-group-item">
         <%= checkin.get('id') %>
         <span class="pull-right">
           <i class="glyphicon glyphicon-chevron-right"></i>
