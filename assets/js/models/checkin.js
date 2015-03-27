@@ -5,15 +5,6 @@ define(
     var Checkin = Backbone.Model.extend({
 
       urlRoot: '/checkin',
-
-      defaults: {
-        id: "",
-        created_at: (new Date()).toJSON(),
-        updated_at: (new Date()).toJSON(),
-        lat: "",
-        lng:"",
-        deleted_at: null
-      },
       initialize: function(){
 
       }
