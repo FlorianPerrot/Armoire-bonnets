@@ -4,13 +4,14 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bootstrap 101 Template</title>
+  <title>Checkins</title>
 
   <!-- data-main attribute tells require.js to load
   scripts/main.js after require.js loads. -->
   <script data-main="assets/js/main" src="vendor/requirejs/require.js"></script>
 
     <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="vendor/leaflet/dist/leaflet.css" rel="stylesheet">
 </head>
 <body>
 
@@ -28,9 +29,9 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <button type="button" class="btn btn-default navbar-btn">
+              <a href="#checkin/ajout" type="button" class="btn btn-default navbar-btn">
                 <i class="glyphicon glyphicon-plus"></i>
-              </button>
+              </a>
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -38,6 +39,9 @@
     </nav>
 
     <main>
+      <div id="checkin-form">
+        <!-- BONE -->
+      </div>
       <div id="checkin-container">
         <!-- BONE -->
       </div>

@@ -1,11 +1,11 @@
 define(
-    ['jquery', 'underscore', 'backbone', 'views/checkin/lists', 'views/checkin/detailsView'],
-    function($,_,Backbone, CheckinListView, DetailsView){
+    ['jquery', 'underscore', 'backbone', 'views/checkin/lists', 'views/checkin/detailsView', 'views/checkin/ajoutCheckin'],
+    function($,_,Backbone, CheckinListView, DetailsView, CheckinForm){
         var Router = Backbone.Router.extend({
             routes: {
                 ""                       : "accueil",
-                "checkin/:idCheckin"     : "voir",
                 "checkin/ajout"          : "ajout",
+                "checkin/:idCheckin"     : "voir",
                 "checkin/edit/:idCheckin": "edit"
             }
         });
@@ -33,7 +33,8 @@ define(
 
             router.on('route:ajout',
                 function(){
-
+                  var checkinForm = new CheckinForm();
+                  checkinForm.render();
                 }
             );
 
