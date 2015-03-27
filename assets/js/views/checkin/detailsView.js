@@ -1,7 +1,7 @@
 define(
-    ['jquery', 'underscore', 'backbone',
+    ['jquery', 'underscore', 'backbone', 'leaflet',
     'models/checkin', 'text!/assets/templates/checkin/detail.html'],
-    function($,_,Backbone,Checkin,CheckinDetailTemplate){
+    function($,_,Backbone, L ,Checkin, CheckinDetailTemplate){
         var CheckinListView = Backbone.View.extend({
 
             el: "#checkin-container",
@@ -21,6 +21,7 @@ define(
                             'checkin': checkin
                           })
                         );
+                        var map = L.map('map').setView([checkin.lat, checkin.lng], 13);
                     }
                 });
             }
