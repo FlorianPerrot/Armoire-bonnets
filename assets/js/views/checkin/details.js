@@ -1,7 +1,7 @@
 define(
     ['jquery', 'underscore', 'backbone', 'leaflet',
-    'models/checkin', 'text!/assets/templates/checkin/detail.html'],
-    function($,_,Backbone, L ,CheckinModel, CheckinDetailTemplate){
+    'models/checkin', 'text!/assets/templates/checkin/detail.html', 'text!/assets/templates/checkin/error.html'],
+    function($,_,Backbone, L ,CheckinModel, CheckinDetailTemplate, ErrorTemplate){
         var CheckinListView = Backbone.View.extend({
 
             el: "#checkin-container",
@@ -26,6 +26,14 @@ define(
                         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
                           maxZoom: 22})
                         .addTo(map);
+                    },
+                    error: function( e ){
+                      errorTemplate = _.template( ErrorTemplate )
+                      self.$el.html(
+                        errorTemplate({ error_message:
+                          "Erreur lors du chargement de la checkin "+ self.id +", veillez vérifier votre connexion Internet."
+                        })
+                      );
                     }
                 });
             },
