@@ -1,6 +1,8 @@
 define(
-    ['jquery', 'underscore', 'backbone', 'views/checkin/lists', 'views/checkin/detailsView', 'views/checkin/ajoutCheckin'],
-    function($,_,Backbone, CheckinListView, DetailsView, CheckinForm){
+    ['jquery', 'underscore', 'backbone',
+     'views/checkin/lists', 'views/checkin/details', 'views/checkin/add'],
+    function($,_,Backbone,
+        ListView, DetailsView, AddView){
         var Router = Backbone.Router.extend({
             routes: {
                 ""                       : "accueil",
@@ -13,14 +15,14 @@ define(
         var initialize = function(){
             var router = new Router;
             $.ajaxPrefilter( function( options, originalOptions, jqXHR ){
-                options.url = 'http://checkin-api.dev.cap-liberte.com/' + options.url;
+                options.url = 'http://checkin-api.dev.cap-liberte.com' + options.url;
                 options.crossDomain = { crossDomain: true };
             } );
 
             router.on('route:accueil',
                 function(){
-                    var checkinListView = new CheckinListView();
-                    checkinListView.render();
+                    var listView = new ListView();
+                    listView.render();
                 }
             );
 
@@ -33,8 +35,8 @@ define(
 
             router.on('route:ajout',
                 function(){
-                  var checkinForm = new CheckinForm();
-                  checkinForm.render();
+                  var addView = new AddView();
+                  addView.render();
                 }
             );
 
