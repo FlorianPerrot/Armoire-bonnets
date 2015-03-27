@@ -5,7 +5,7 @@ require.config({
 		underscore: '../../vendor/underscore/underscore',
 		backbone: '../../vendor/backbone/backbone',
 		text: '../../vendor/requirejs-text/text',
-		leaflet: '../../vendor/leaflet/dist/leaflet'
+		leaflet: '../../vendor/leaflet/dist/leaflet-src'
 	},
 	//Defini les deps non supporté par requireJs
 	shim: {
@@ -18,6 +18,9 @@ require.config({
 		},
 		'jquery': {
 			export: '$'
+		},
+		'leaflet': {
+			export: 'L'
 		}
 	},
 	urlArgs: "_=" + (new Date()).getTime()
