@@ -11,7 +11,7 @@ define(
                 this.$el.html(this.template());
 
                 //Leaflet map
-                var map = L.map('map').setView([0, 0], 1);
+                var map = L.map('map-draw').setView([0, 0], 1);
                 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
                   maxZoom: 22})
                 .addTo(map);
