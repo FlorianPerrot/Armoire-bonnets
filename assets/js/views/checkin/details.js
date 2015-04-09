@@ -23,7 +23,7 @@ define(
                         );
 
                         console.log(checkin.get('user'));
-                        var map = L.map('map').setView([checkin.attributes.lat, checkin.attributes.lng], 4);
+                        var map = L.map('details-map').setView([checkin.attributes.lat, checkin.attributes.lng], 4);
                         L.marker([checkin.attributes.lat, checkin.attributes.lng]).addTo(map);
                         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
                           maxZoom: 22})
