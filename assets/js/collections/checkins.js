@@ -3,7 +3,7 @@ define(
     function(_,Backbone, CheckinModel){
 
         var CheckinCollection = Backbone.Collection.extend({
-            url: '/checkin',
+            url: 'http://checkin-api.dev.cap-liberte.com/checkin',
             model: CheckinModel
         });
 

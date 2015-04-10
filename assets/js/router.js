@@ -14,8 +14,8 @@ define(
 
         var initialize = function(){
             var router = new Router;
+
             $.ajaxPrefilter( function( options, originalOptions, jqXHR ){
-                options.url = 'http://checkin-api.dev.cap-liberte.com' + options.url;
                 options.crossDomain = { crossDomain: true };
             } );
 
