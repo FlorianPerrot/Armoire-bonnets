@@ -27,6 +27,7 @@
     "requirejs": "~2.1.16",
     "requirejs-text": "~2.0.14",
     "leaflet": "~0.7.3",
-    "leaflet.draw": "~0.2.3"
+    "leaflet.draw": "~0.2.3",
+    "momentjs": "~2.10.2"
   }
 }
