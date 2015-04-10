@@ -10,13 +10,48 @@ define(
             render: function(){
                 this.$el.html(this.template());
 
+                //Set latlng on form
+                function setLatlngToForm(marker){
+                  if(marker._latlng == undefined){
+                    $('form .lat').attr('value', marker.latlng.lat);
+                    $('form .lng').attr('value', marker.latlng.lng);
+                    map.setView(marker.latlng, 17);
+                  }
+                  else{
+                    $('form .lat').attr('value', marker._latlng.lat);
+                    $('form .lng').attr('value', marker._latlng.lng);
+                    map.setView(marker._latlng, 17);
+                  }
+                }
+
                 //Leaflet map
                 var map = L.map('map-draw').setView([0, 0], 1);
                 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
                   maxZoom: 22})
                 .addTo(map);
 
-                //Edit tools
+                //Create custom icon
+                var greenIcon = L.icon({
+                  iconUrl: 'assets/img/you_are_here.svg',
+                  iconSize: [50, 50],
+                  iconAnchor: [25, 49]
+                });
+
+                //Geoloc actu pos
+                if(navigator.geolocation){
+                  navigator.geolocation.getCurrentPosition(
+                    function(position){
+                      L.marker([position.coords.latitude, position.coords.longitude], {icon: greenIcon})
+                      .on('click', setLatlngToForm)
+                      .addTo(map);
+
+                      $('form .lat').attr('value', position.coords.latitude);
+                      $('form .lng').attr('value', position.coords.longitude);
+                    }
+                  );
+                }
+
+                //Init edit tools
                 var drawnItems = new L.FeatureGroup();
                 map.addLayer(drawnItems);
                 var drawControl = new L.Control.Draw({
@@ -39,14 +74,9 @@ define(
                     map.removeLayer(actuMarker);
                   actuMarker = e.layer;
 
-                  actuMarker.bindPopup(
-                    'Lat: '+actuMarker._latlng.lat+'</br>'+
-                    'Lng: '+actuMarker._latlng.lng
-                  );
                   drawnItems.addLayer(actuMarker);
-
-                  $('form .lat').attr('value', actuMarker._latlng.lat);
-                  $('form .lng').attr('value', actuMarker._latlng.lng);
+                  setLatlngToForm(actuMarker);
+                  actuMarker.on('click', setLatlngToForm);
               });
             },
 
