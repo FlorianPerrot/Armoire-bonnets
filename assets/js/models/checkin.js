@@ -8,7 +8,6 @@ define(
         this.set({ 'user' : new User(this.get('user')) })
       },
       getRelativeTime: function(){
-        console.log(this);
         return Moment(this.attributes.created_at, "YYYY-MM-DD HH:mm:ss").fromNow();
       }
     });

@@ -13,7 +13,7 @@ define(
         });
 
         var initialize = function(){
-            var router = new Router;
+            router = new Router;
 
             $.ajaxPrefilter( function( options, originalOptions, jqXHR ){
                 options.crossDomain = { crossDomain: true };

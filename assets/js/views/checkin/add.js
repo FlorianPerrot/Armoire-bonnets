@@ -95,6 +95,8 @@ define(
               });
               checkin.save();
 
+              router.navigate("", {trigger: true});
+
               return false;
             }
         });
