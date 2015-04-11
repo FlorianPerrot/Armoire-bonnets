@@ -41,8 +41,8 @@ define(
               "click .delete": "delete"
             },
             delete: function(e){
-              //checkin.destroy();
-              router.navigate("", {trigger: true});
+              checkin.destroy();
+              router.navigate("", {trigger: true, replace: true});
               return false;
             }
         });

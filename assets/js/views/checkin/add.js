@@ -8,6 +8,7 @@ define(
             template: _.template( CheckinAddTemplate ),
 
             render: function(){
+                $('#checkin-form:hidden').show();
                 this.$el.html(this.template());
 
                 //Set latlng on form
@@ -95,7 +96,7 @@ define(
               });
               checkin.save();
 
-              router.navigate("", {trigger: true});
+              router.navigate("", {trigger: true, replace: true});
 
               return false;
             }

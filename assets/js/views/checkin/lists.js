@@ -11,6 +11,7 @@ define(
             render: function(){
 
                 var self = this;
+                $('#checkin-form:visible').hide();
 
                 checkinCollection = new CheckinCollection();
 
