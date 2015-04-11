@@ -6,7 +6,8 @@ require.config({
 		backbone: '../../vendor/backbone/backbone',
 		text: '../../vendor/requirejs-text/text',
 		leaflet: '../../vendor/leaflet/dist/leaflet-src',
-		leaflet_draw: '../../vendor/leaflet.draw/dist/leaflet.draw-src'
+		leaflet_draw: '../../vendor/leaflet.draw/dist/leaflet.draw-src',
+		momentjs: '../../vendor/momentjs/moment'
 	},
 	//Defini les deps non supporté par requireJs
 	shim: {

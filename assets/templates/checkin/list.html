@@ -4,7 +4,7 @@
     <% _.each(checkins, function(checkin){ %>
 
       <a href="#checkin/<%= checkin.get('id') %>" class="list-group-item">
-        <%= checkin.get('id') %>
+        <%= checkin.get('id') %> <i class="glyphicon glyphicon-menu-right"></i> <%= checkin.getRelativeTime() %>
         <span class="pull-right">
           <i class="glyphicon glyphicon-chevron-right"></i>
         </span>
