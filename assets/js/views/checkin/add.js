@@ -8,6 +8,7 @@ define(
             template: _.template( CheckinAddTemplate ),
 
             render: function(){
+                //Affiche le template
                 this.$el.html(this.template());
 
                 //Set latlng on form
@@ -78,6 +79,15 @@ define(
                   setLatlngToForm(actuMarker);
                   actuMarker.on('click', setLatlngToForm);
               });
+
+              //Sortir de l'overlay
+              $(document).click(function(event) {
+                  if(!$(event.target).closest('#checkin-add .overlay').length) {
+                    if($('#checkin-add .overlay').is(":visible")){
+                      router.navigate("", {trigger: true, replace: true});
+                    }
+                  }
+              })
             },
 
             events: {
