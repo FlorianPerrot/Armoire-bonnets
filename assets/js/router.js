@@ -21,6 +21,7 @@ define(
 
             router.on('route:accueil',
                 function(){
+                    $('#checkin-add:visible').empty();
                     var listView = new ListView();
                     listView.render();
                 }
@@ -28,6 +29,7 @@ define(
 
             router.on('route:voir',
                 function(idCheckin){
+                    $('#checkin-add:visible').empty();
                     var detailsView = new DetailsView({id: idCheckin});
                     detailsView.render();
                 }

@@ -4,11 +4,10 @@ define(
     function($,_,Backbone, Leaflet, LeafletDraw, CheckinModel, CheckinAddTemplate){
         var CheckinAdd = Backbone.View.extend({
 
-            el: "#checkin-form",
+            el: "#checkin-add",
             template: _.template( CheckinAddTemplate ),
 
             render: function(){
-                $('#checkin-form:hidden').show();
                 this.$el.html(this.template());
 
                 //Set latlng on form

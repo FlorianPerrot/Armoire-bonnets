@@ -1,32 +1,21 @@
-<h2> Ajout de checkin </h2>
-<form id="checkin-form" method="POST">
+<div class="overlay-container">
+  <div class="overlay">
+    <h2> Ajout de checkin </h2>
+    <form id="checkin-form" method="POST">
 
-  <!--
-  <div class="input-group">
-    <span class="input-group-addon" id="basic-addon1">Lieu</span>
-    <input name="lieu" type="text" class="form-control" placeholder="Votre position actuelle" aria-describedby="basic-addon1">
-  </div>
-  -->
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">Latitude</span>
+        <input name="lat" type="text" class="form-control lat" placeholder="Votre latitude" aria-describedby="basic-addon1">
 
-  <div class="input-group">
-    <span class="input-group-addon" id="basic-addon1">Latitude</span>
-    <input name="lat" type="text" class="form-control lat" placeholder="Votre latitude" aria-describedby="basic-addon1">
+        <span class="input-group-addon" id="basic-addon1">Longitude</span>
+        <input name="lng" type="text" class="form-control lng" placeholder="Votre Longitude" aria-describedby="basic-addon1">
+      </div>
 
-    <span class="input-group-addon" id="basic-addon1">Longitude</span>
-    <input name="lng" type="text" class="form-control lng" placeholder="Votre Longitude" aria-describedby="basic-addon1">
-  </div>
+      <div id="map-draw" class="map" style="height: 300px">
+      </diV>
 
-  <div id="map-draw" class="map" style="height: 300px">
-  </diV>
+      <input name="submit" type="submit" class="form-control" placeholder="Votre Longitude" aria-describedby="basic-addon1">
 
-  <!--
-  <div class="input-group">
-    <span class="input-group-addon" id="basic-addon">Lieu</span>
-    <textarea row="3" name="description" placeholder="Votre position actuelle">
-    </textarea>
-  </div>
-  -->
-
-  <input name="submit" type="submit" class="form-control" placeholder="Votre Longitude" aria-describedby="basic-addon1">
-
-</form>
+    </form>
+  <div>
+<div>
