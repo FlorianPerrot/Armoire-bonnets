@@ -84,10 +84,10 @@ define(
               $(document).click(function(event) {
                   if(!$(event.target).closest('#checkin-add .overlay').length) {
                     if($('#checkin-add .overlay').is(":visible")){
-                      router.navigate("", {trigger: true, replace: true});
+                      router.navigate(oldRoute, {trigger: true, replace: true});
                     }
                   }
-              })
+              });
             },
 
             events: {
@@ -103,9 +103,11 @@ define(
               $.each( serializeArray, function(index, o){
                 checkin.set( o.name, o.value );
               });
-              checkin.save();
-
-              router.navigate("", {trigger: true, replace: true});
+              checkin.save(null, {
+                success: function(){
+                  router.navigate(oldRoute, {trigger: true, replace: true});
+                }
+              });
 
               return false;
             }
