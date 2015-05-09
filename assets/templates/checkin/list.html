@@ -1,11 +1,15 @@
 <h2> Checkins </h2>
 <div id="list-map" class="map"></div>
-<ul class="list-group">
+<ul class="list-group list-checkins">
     <% _.each(checkins, function(checkin){ %>
 
       <a href="#checkin/<%= checkin.get('id') %>" class="list-group-item">
-        <%= checkin.get('id') %> <i class="glyphicon glyphicon-menu-right"></i> <%= checkin.getRelativeTime() %>
-        <span class="pull-right">
+        <img class="small-img" src="<%= checkin.get('user').attributes.picture %>" alt="Photo de l'auteur"/>
+        <i class="glyphicon glyphicon-menu-right"></i>
+        <%= checkin.get('user').attributes.name %>
+        <i class="glyphicon glyphicon-menu-right"></i>
+        <%= checkin.getRelativeTime() %>
+        <span class="right-cursor">
           <i class="glyphicon glyphicon-chevron-right"></i>
         </span>
       </a>

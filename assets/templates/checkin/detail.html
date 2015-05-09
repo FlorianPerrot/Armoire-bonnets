@@ -1,12 +1,15 @@
 <h2> Checkin details </h2>
 
 <div class="user">
-  <img class="img-circle" atr="<%= checkin.get('user').name %>" src="<%= checkin.get('user').picture %>"/>
+  <img class="img-circle" atr="<%= checkin.get('user').name %>"
+       src="<%= checkin.get('user').picture %>"/>
   <ul>
     <li>Nom : <%= checkin.get('user').name %></li>
     <li>Email : <%= checkin.get('user').email %></li>
+    <li>Date de publication: <%= checkin.getDate() %></li>
   </ul>
 </div>
-<input name="delete" type="button" value="Delete" class="form-control delete" placeholder="Votre Longitude" aria-describedby="basic-addon1">
+<input name="delete" type="button" value="Delete" class="form-control delete"
+       placeholder="Votre Longitude" aria-describedby="basic-addon1">
 <div id="details-map" class="map">
 </diV>

@@ -2,13 +2,19 @@
   <div class="overlay">
     <h2> Ajout de checkin </h2>
     <form id="checkin-form" method="POST">
-
-      <div class="input-group">
-        <span class="input-group-addon" id="basic-addon1">Latitude</span>
-        <input name="lat" type="text" class="form-control lat" placeholder="Votre latitude" aria-describedby="basic-addon1">
-
-        <span class="input-group-addon" id="basic-addon1">Longitude</span>
-        <input name="lng" type="text" class="form-control lng" placeholder="Votre Longitude" aria-describedby="basic-addon1">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">Latitude</span>
+              <input name="lat" type="text" class="form-control lat" placeholder="Votre latitude" aria-describedby="basic-addon1">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">Longitude</span>
+              <input name="lng" type="text" class="form-control lng" placeholder="Votre Longitude" aria-describedby="basic-addon1">
+          </div>
+        </div>
       </div>
 
       <div id="map-draw" class="map" style="height: 300px">

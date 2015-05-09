@@ -7,7 +7,7 @@ require.config({
 		text: '../../vendor/requirejs-text/text',
 		leaflet: '../../vendor/leaflet/dist/leaflet-src',
 		leaflet_draw: '../../vendor/leaflet.draw/dist/leaflet.draw-src',
-		momentjs: '../../vendor/momentjs/moment'
+		momentjs: '../../vendor/momentjs/min/moment-with-locales'
 	},
 	//Defini les deps non supporté par requireJs
 	shim: {

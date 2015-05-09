@@ -14,6 +14,7 @@ define(
 
                 checkinCollection = new CheckinCollection();
 
+                //Chargement des checkins
                 checkinCollection.fetch({
                     success: function( checkins ){
 

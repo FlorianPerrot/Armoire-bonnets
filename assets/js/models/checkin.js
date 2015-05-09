@@ -1,5 +1,5 @@
 define(
-  ['jquery', 'underscore', 'backbone', 'momentjs', 'models/user' ],
+  ['jquery', 'underscore', 'backbone', 'momentjs','models/user' ],
   function($,_,Backbone, Moment, User){
     var Checkin = Backbone.Model.extend({
 
@@ -8,7 +8,14 @@ define(
         this.set({ 'user' : new User(this.get('user')) })
       },
       getRelativeTime: function(){
-        return Moment(this.attributes.created_at, "YYYY-MM-DD HH:mm:ss").fromNow();
+        Moment.lang('fr');
+        return Moment(this.attributes.created_at, "YYYY-MM-DD HH:mm:ss")
+                .fromNow();
+      },
+      getDate: function(){
+        Moment.lang('fr');
+        return Moment(this.attributes.created_at, "YYYY-MM-DD HH:mm:ss")
+                .format('LLLL');
       }
     });
 

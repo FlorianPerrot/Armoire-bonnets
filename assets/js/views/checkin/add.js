@@ -10,6 +10,7 @@ define(
             render: function(){
                 //Affiche le template
                 this.$el.html(this.template());
+                //$('body').css('overflow','hidden');
 
                 //Set latlng on form
                 function setLatlngToForm(marker){
